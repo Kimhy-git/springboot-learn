@@ -16,6 +16,17 @@ spring:
     console:
       enabled: true
 
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 710210019346-upnaaiucljuqesfe6jn3ri01en8d0j7k.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+
 
 
 jwt:
