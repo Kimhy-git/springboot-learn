@@ -83,6 +83,8 @@ function getCookie(key) {
             return true;
         }
     });
+
+    return result;
 }
 
 
@@ -100,6 +102,7 @@ function httpRequest(method, url, body, success, fail) {
         return success();
     }
     const refresh_token = getCookie('refresh_token');
+    console.log('refresh_token : ' + refresh_token);
     if(response.status === 401 && refresh_token) {
         fetch('/api/token', {
             method: 'POST',
@@ -125,5 +128,4 @@ function httpRequest(method, url, body, success, fail) {
         return fail();
     }
     });
-
 }
